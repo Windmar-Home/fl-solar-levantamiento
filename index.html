@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Florida 2026 — Levantamiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; font-family:'Montserrat',sans-serif; background:#060A0F; color:#FFFFFF; overflow-x:hidden; }
+
+/* SECTION SYSTEM — one at a time */
+.section {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 80px;
+  position: relative;
+}
+.section.active { display: flex; }
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1D429B, #F2C94C);
+  transition: width 0.4s ease;
+  z-index: 200;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(6,10,15,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.nav-logo span { color: #F89B24; }
+.nav-step {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+.nav-progress {
+  font-size: 11px;
+  color: #F2C94C;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* HERO STYLES */
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #F2C94C;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.hero-title {
+  font-size: clamp(52px, 10vw, 120px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hero-title .accent { color: #F2C94C; }
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.hero-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  max-width: 580px;
+  margin-bottom: 40px;
+}
+.pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.pill {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(242,201,76,0.4);
+  color: #F2C94C;
+  background: rgba(242,201,76,0.08);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #1D429B, #21366B);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29,66,155,0.4); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { color: #FFFFFF; border-color: rgba(255,255,255,0.4); }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #F2C94C, #D4A800);
+  color: #060A0F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(242,201,76,0.4); }
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* SECTION HEADER */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #F89B24;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.section-title {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.section-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+  font-style: italic;
+}
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #1D429B, #F89B24);
+  margin-bottom: 32px;
+}
+
+/* CONTENT WRAPPER */
+.content-wrap {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* AGENT SPEAKS */
+.agent-speaks {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+.agent-avatar { font-size: 32px; flex-shrink: 0; }
+.agent-info .agent-name {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F2C94C;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.agent-info .agent-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+}
+
+/* QUESTION */
+.question-block {
+  margin-bottom: 28px;
+}
+.question-text {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.question-context {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  resize: none;
+  min-height: 80px;
+  transition: border-color 0.2s;
+  overflow: hidden;
+}
+textarea:focus { outline: none; border-color: rgba(242,201,76,0.5); }
+textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+/* CAPTURE BUTTON */
+.capture-btn {
+  margin-top: 10px;
+  padding: 7px 18px;
+  border-radius: 100px;
+  background: rgba(29,66,155,0.2);
+  border: 1px solid rgba(29,66,155,0.4);
+  color: #A6C3E6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+.capture-btn:hover { background: rgba(29,66,155,0.4); color: #FFFFFF; }
+.capture-btn.captured { background: rgba(0,166,81,0.2); border-color: rgba(0,166,81,0.4); color: #00A651; }
+
+/* PERSONA CARDS */
+.persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.persona-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.persona-card:hover { border-color: rgba(242,201,76,0.3); background: rgba(242,201,76,0.04); }
+.persona-card.selected { border-color: #F2C94C; background: rgba(242,201,76,0.08); }
+.persona-emoji { font-size: 24px; margin-bottom: 10px; }
+.persona-name { font-size: 15px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+.persona-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+.persona-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.ptag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.5);
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s;
+}
+.ptag.easy.on { background: rgba(0,166,81,0.2); border-color: #00A651; color: #00A651; }
+.ptag.profit.on { background: rgba(242,201,76,0.2); border-color: #F2C94C; color: #F2C94C; }
+.ptag.common.on { background: rgba(248,155,36,0.2); border-color: #F89B24; color: #F89B24; }
+
+/* OBJ LIST */
+.obj-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.obj-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 0;
+}
+.obj-item:hover { border-color: rgba(242,201,76,0.3); }
+.obj-rank { font-size: 18px; font-weight: 900; color: rgba(255,255,255,0.15); width: 24px; flex-shrink: 0; text-align: center; font-family: 'Montserrat', sans-serif; }
+.obj-rank.set { color: #F2C94C; }
+.obj-text { font-size: 13px; color: #FFFFFF; flex: 1; min-width: 0; }
+.obj-arrows { display: flex; gap: 4px; flex-shrink: 0; }
+.obj-btn { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 3px 8px; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 12px; transition: all 0.2s; }
+.obj-btn:hover { border-color: #F2C94C; color: #F2C94C; }
+
+/* TERRITORY CARD */
+.terr-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.terr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+}
+.terr-header:hover { background: rgba(255,255,255,0.02); }
+.terr-name { font-size: 20px; font-weight: 900; color: #FFFFFF; }
+.terr-tagline { font-size: 12px; color: #F89B24; font-style: italic; margin-top: 2px; }
+.terr-toggle { font-size: 18px; color: rgba(255,255,255,0.4); transition: transform 0.2s; }
+.terr-toggle.open { transform: rotate(45deg); }
+.terr-body { display: none; padding: 0 24px 24px; }
+.terr-body.open { display: block; }
+.terr-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 14px; }
+
+/* FILL BLANK */
+.fill-line {
+  font-size: clamp(15px, 2vw, 18px);
+  color: #FFFFFF;
+  line-height: 2.4;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.fill-input {
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid #F89B24;
+  background: transparent;
+  color: #F2C94C;
+  font-family: 'Montserrat', sans-serif;
+  font-size: inherit;
+  width: 240px;
+  outline: none;
+  padding: 2px 6px;
+  transition: border-color 0.2s;
+}
+.fill-input:focus { border-color: #F2C94C; }
+.fill-input::placeholder { color: rgba(255,255,255,0.2); font-style: italic; }
+
+/* CHECKLIST */
+.check-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.check-item:hover { border-color: rgba(242,201,76,0.3); }
+.check-item.checked { border-color: rgba(0,166,81,0.4); background: rgba(0,166,81,0.06); }
+.check-box {
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 11px;
+}
+.check-item.checked .check-box { background: #00A651; border-color: #00A651; color: #FFF; }
+.check-label { font-size: 13px; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+.check-item.checked .check-label { color: #FFFFFF; }
+
+/* INSIGHT */
+.insight-quote {
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.insight-highlight { color: #F2C94C; }
+.insight-label {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.insight-blank { color: #F2C94C; border-bottom: 2px solid #F2C94C; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 36px; }
+.timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(29,66,155,0.3); }
+.tl-item { position: relative; padding-bottom: 32px; }
+.tl-dot {
+  position: absolute; left: -26px; top: 2px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #060A0F; border: 2px solid #1D429B;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: #1D429B; font-weight: 700;
+}
+.tl-date { font-size: 10px; letter-spacing: 2px; color: #F89B24; text-transform: uppercase; margin-bottom: 4px; }
+.tl-title { font-size: 17px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+.tl-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.tl-launch { background: rgba(0,166,81,0.08); border: 1px solid rgba(0,166,81,0.25); border-radius: 10px; padding: 14px 16px; }
+.tl-launch .tl-date { color: #00A651; }
+.tl-launch .tl-title { color: #00A651; }
+
+/* SAVE STATUS */
+.save-status {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 500;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.save-status.show { opacity: 1; }
+.save-status.saving { background: rgba(29,66,155,0.3); border: 1px solid rgba(29,66,155,0.5); color: #A6C3E6; }
+.save-status.saved { background: rgba(0,166,81,0.3); border: 1px solid rgba(0,166,81,0.5); color: #00A651; }
+.save-status.error { background: rgba(196,30,42,0.3); border: 1px solid rgba(196,30,42,0.5); color: #E04A55; }
+
+/* COMP TABLE */
+.comp-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.comp-table th { text-align: left; padding: 10px 14px; font-size: 10px; letter-spacing: 2px; color: #F89B24; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.comp-table td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; color: #FFFFFF; vertical-align: top; }
+.comp-table td[contenteditable] { outline: none; color: rgba(255,255,255,0.6); transition: background 0.2s; }
+.comp-table td[contenteditable]:focus { background: rgba(248,155,36,0.06); color: #FFFFFF; }
+.comp-table td[contenteditable]:empty::before { content: attr(data-ph); color: rgba(255,255,255,0.15); font-style: italic; }
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .persona-grid { grid-template-columns: 1fr; }
+  .fill-input { width: 100%; display: block; margin-top: 4px; }
+  .fill-line { flex-direction: column; align-items: flex-start; }
+  .nav-step { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav>
+  <div class="nav-logo">WindMar <span>Home</span></div>
+  <span class="nav-step" id="nav-step">Solar FL · Levantamiento</span>
+  <span class="nav-progress" id="nav-progress">1 / 10</span>
+</nav>
+
+<div class="save-status" id="save-status"></div>
+
+<!-- ═══ S0: HERO ═══ -->
+<div class="section active" id="s0">
+  <div style="text-align:center;max-width:800px;width:100%">
+    <p class="hero-eyebrow">Workshop de Levantamiento · Solar FL 2026</p>
+    <h1 class="hero-title">Solar<br><span class="accent">Florida</span></h1>
+    <p class="hero-sub">Mercado nuevo. Cero brand awareness. La oportunidad más grande.</p>
+    <p class="hero-body">Antes de construir la campaña, el campo nos enseña. Esta sesión es para los que viven el negocio — no para los que lo diseñan desde una oficina.</p>
+    <div class="pills">
+      <span class="pill">☀️ Orlando + Tampa</span>
+      <span class="pill">🔋 Tesla Powerwall Certified</span>
+      <span class="pill">📊 $5,500 → $12,500/mo</span>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-primary" onclick="goTo(1)">Comenzar →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S1: EQUIPO ═══ -->
+<div class="section" id="s1">
+  <div class="content-wrap">
+    <p class="section-label">Tu equipo hoy</p>
+    <h2 class="section-title">Los que diseñan<br>tu campaña.</h2>
+    <div class="divider"></div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:32px;max-width:600px">El equipo de marketing de WindMar está aquí para escuchar — no para presentar. Lo que digas hoy define la campaña.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px">
+        <div style="font-size:32px;margin-bottom:12px">🎤</div>
+        <div style="font-size:10px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:6px;font-weight:700">Facilitador · VP of Growth</div>
+        <div style="font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:8px">Miguel Bethencourt</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.6);font-style:italic;line-height:1.6">"Vengo a escuchar. Tú tienes la inteligencia que necesitamos."</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px">
+        <div style="font-size:32px;margin-bottom:12px">🎨</div>
+        <div style="font-size:10px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:6px;font-weight:700">Director Creativo</div>
+        <div style="font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:8px">Jaime Díaz Cabán</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.6);font-style:italic;line-height:1.6">"¿Qué se ve auténtico en Orlando y Tampa?"</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px">
+        <div style="font-size:32px;margin-bottom:12px">✍️</div>
+        <div style="font-size:10px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:6px;font-weight:700">Marketing de Marca</div>
+        <div style="font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:8px">Daniela Lozano</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.6);font-style:italic;line-height:1.6">"Las palabras de los anuncios vienen de ti."</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px">
+        <div style="font-size:32px;margin-bottom:12px">📊</div>
+        <div style="font-size:10px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:6px;font-weight:700">Estrategia + Paid Media</div>
+        <div style="font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:8px">Felipe · Beltrán · Julian</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.6);font-style:italic;line-height:1.6">"Necesitamos los datos reales de tus conversaciones."</p>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(0)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(2)">Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S2: MERCADO ═══ -->
+<div class="section" id="s2">
+  <div class="content-wrap">
+    <p class="section-label">El mercado</p>
+    <h2 class="section-title">El mercado donde<br>vamos a ganar.</h2>
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#F2C94C;line-height:1">14,303</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">MW solar instalado<br>FL = mercado #3</div>
+      </div>
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#F2C94C;line-height:1">30%</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">Federal tax credit<br>mayor trigger de urgencia</div>
+      </div>
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#F2C94C;line-height:1">78%</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">Homeowners FL preocupados<br>por la red eléctrica</div>
+      </div>
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#F2C94C;line-height:1">51%</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">Dicen que el ahorro<br>es su razón #1</div>
+      </div>
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#F2C94C;line-height:1">63%</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">Mercado de baterías<br>= Tesla Powerwall</div>
+      </div>
+      <div style="text-align:center;padding:28px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+        <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:rgba(255,255,255,0.3);line-height:1">0%</div>
+        <div style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4">Brand awareness<br>WindMar en FL hoy</div>
+      </div>
+    </div>
+    <div style="background:rgba(29,66,155,0.1);border:1px solid rgba(29,66,155,0.25);border-radius:12px;padding:20px 24px;margin-bottom:24px">
+      <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:1.7">Todos en Florida prometen ahorro. WindMar puede prometer algo diferente: <strong style="color:#F2C94C">que conocemos tu techo.</strong> Somos Tesla Certified y la única empresa que hace Solar + Roofing bajo un solo contrato.</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(1)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(3)">Ejercicio 1 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S3: EJERCICIO 1 — EL CLIENTE ═══ -->
+<div class="section" id="s3">
+  <div class="content-wrap">
+    <p class="section-label">Ejercicio 1 de 5 · 15 min</p>
+    <h2 class="section-title">¿A quién le<br>vendemos solar en FL?</h2>
+    <div class="divider"></div>
+    <div class="agent-speaks">
+      <div class="agent-avatar">🎯</div>
+      <div class="agent-info">
+        <div class="agent-name">Fercho · Estrategia</div>
+        <div class="agent-text">"Las personas del brief son hipótesis. Tú tienes los datos reales. ¿Cuánto coincide con lo que ves en el campo?"</div>
+      </div>
+    </div>
+    <p style="font-size:12px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:16px;font-weight:700">Marca cada perfil: ¿más fácil? ¿más rentable? ¿más común?</p>
+    <div class="persona-grid" id="personas">
+      <div class="persona-card" data-id="p1">
+        <div class="persona-emoji">💰</div>
+        <div class="persona-name">El Savings Seeker</div>
+        <div class="persona-desc">35-55 años. Abrió la factura de FPL y dijo "esto es una locura." Compara 3 cotizaciones. Quiere el ROI exacto.</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p1" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p1" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p1" data-tag="common">Más común</button>
+        </div>
+      </div>
+      <div class="persona-card" data-id="p2">
+        <div class="persona-emoji">🌀</div>
+        <div class="persona-name">El Resilience Planner</div>
+        <div class="persona-desc">40-65 años. Pasó por un huracán. El vecino tuvo luz cuando él no. Tesla Powerwall es lo que busca.</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p2" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p2" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p2" data-tag="common">Más común</button>
+        </div>
+      </div>
+      <div class="persona-card" data-id="p3">
+        <div class="persona-emoji">🦅</div>
+        <div class="persona-name">El Independence Minded</div>
+        <div class="persona-desc">45-60 años. "No quiero depender de FPL." Motivado por autonomía y control.</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p3" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p3" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p3" data-tag="common">Más común</button>
+        </div>
+      </div>
+      <div class="persona-card" data-id="p4">
+        <div class="persona-emoji">🔋</div>
+        <div class="persona-name">El Battery-First</div>
+        <div class="persona-desc">No le importa el ahorro — quiere el Powerwall. Pasó por un apagón largo. La batería es la compra.</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p4" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p4" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p4" data-tag="common">Más común</button>
+        </div>
+      </div>
+      <div class="persona-card" data-id="p5">
+        <div class="persona-emoji">🇵🇷</div>
+        <div class="persona-name">El Boricua de FL</div>
+        <div class="persona-desc">Puertorriqueño en Orlando/Tampa. Vivió María o Fiona. Conoce WindMar de PR. Llega por referido.</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p5" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p5" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p5" data-tag="common">Más común</button>
+        </div>
+      </div>
+      <div class="persona-card" data-id="p6">
+        <div class="persona-emoji">🏘️</div>
+        <div class="persona-name">El Roof + Solar Combo</div>
+        <div class="persona-desc">Necesita techo nuevo. El rep conecta los dots: mientras estamos arriba, ¿por qué no solar también?</div>
+        <div class="persona-tags">
+          <button class="ptag easy" data-persona="p6" data-tag="easy">Más fácil</button>
+          <button class="ptag profit" data-persona="p6" data-tag="profit">Más rentable</button>
+          <button class="ptag common" data-persona="p6" data-tag="common">Más común</button>
+        </div>
+      </div>
+    </div>
+    <div class="question-block">
+      <div class="question-text">¿Hay un perfil que no está en la lista pero que existe en tu mercado?</div>
+      <div class="question-context">Descríbelo — nombre, qué lo motiva, cómo llega a ti.</div>
+      <textarea data-key="s3_perfil_faltante" placeholder="Descríbelo..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="question-block">
+      <div class="question-text">¿Cuál es el más difícil de cerrar y por qué?</div>
+      <textarea data-key="s3_dificil" placeholder="El más difícil es..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(2)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(4)">Ejercicio 2 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S4: EJERCICIO 2 — OBJECIONES ═══ -->
+<div class="section" id="s4">
+  <div class="content-wrap">
+    <p class="section-label">Ejercicio 2 de 5 · 15 min</p>
+    <h2 class="section-title">¿Qué detiene<br>a la gente?</h2>
+    <div class="divider"></div>
+    <div class="agent-speaks">
+      <div class="agent-avatar">📊</div>
+      <div class="agent-info">
+        <div class="agent-name">Julian · Paid Media</div>
+        <div class="agent-text">"El mercado dice que la objeción #1 es el costo. En Puerto Rico no lo era. ¿Lo es en Florida?"</div>
+      </div>
+    </div>
+    <p style="font-size:12px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:14px;font-weight:700">Ordena de más a menos frecuente (↑↓)</p>
+    <div class="obj-list" id="obj-list">
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"El costo — no puedo pagarlo ahora mismo"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"No confío en la empresa — ¿qué pasa si desaparecen?"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"Ya me cotizaron con SunVena / solar gratis"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"Mi techo no está en buen estado"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"¿Y si el sistema no produce lo que prometen?"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"No sé si me voy a quedar en esta casa suficiente tiempo"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"No conozco WindMar — ¿son de Puerto Rico?"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+      <div class="obj-item"><span class="obj-rank">—</span><span class="obj-text">"Tengo HOA — no sé si me dejan instalar paneles"</span><div class="obj-arrows"><button class="obj-btn" onclick="moveObj(this,-1)">↑</button><button class="obj-btn" onclick="moveObj(this,1)">↓</button></div></div>
+    </div>
+    <div class="question-block" style="margin-top:24px">
+      <div class="question-text">La objeción que nunca dicen en voz alta pero siempre está ahí.</div>
+      <div class="question-context">Cuando dicen "necesito pensarlo" — ¿qué están pensando realmente?</div>
+      <textarea data-key="s4_objecion_real" placeholder="La real detrás de la objeción..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="question-block">
+      <div class="question-text">¿El Tesla Powerwall cierra negocios o es solo una conversación bonita?</div>
+      <div class="question-context">Dame un ejemplo real — una venta donde el Powerwall fue decisivo.</div>
+      <textarea data-key="s4_powerwall" placeholder="Ejemplo concreto..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(3)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(5)">Ejercicio 3 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S5: EJERCICIO 3 — COMPETENCIA ═══ -->
+<div class="section" id="s5">
+  <div class="content-wrap">
+    <p class="section-label">Ejercicio 3 de 5 · 10 min</p>
+    <h2 class="section-title">¿A quién le ganamos?<br>¿A quién le perdemos?</h2>
+    <div class="divider"></div>
+    <div class="agent-speaks">
+      <div class="agent-avatar">🎯</div>
+      <div class="agent-info">
+        <div class="agent-name">Beltrán · Estrategia</div>
+        <div class="agent-text">"Necesito nombres, no categorías. ¿Quién específicamente nos está ganando negocios en FL?"</div>
+      </div>
+    </div>
+    <table class="comp-table">
+      <thead><tr><th>Empresa</th><th>¿Cómo nos ganan?</th><th>¿Cómo los superamos?</th></tr></thead>
+      <tbody id="comp-tbody">
+        <tr><td style="font-weight:700;color:#FFFFFF">Solaria Solar & Roofing</td><td contenteditable="true" data-ph="¿Qué hace bien?"></td><td contenteditable="true" data-ph="¿Cómo ganamos?"></td></tr>
+        <tr><td style="font-weight:700;color:#FFFFFF">SunVena ("free solar")</td><td contenteditable="true" data-ph="¿Qué hace bien?"></td><td contenteditable="true" data-ph="¿Cómo ganamos?"></td></tr>
+        <tr><td style="font-weight:700;color:#FFFFFF">Sunrun (national)</td><td contenteditable="true" data-ph="¿Qué hace bien?"></td><td contenteditable="true" data-ph="¿Cómo ganamos?"></td></tr>
+      </tbody>
+    </table>
+    <button onclick="addCompRow()" style="padding:7px 18px;border-radius:8px;background:none;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-family:'Montserrat',sans-serif;font-size:12px;cursor:pointer;margin-bottom:24px">+ Agregar competidor</button>
+    <div class="question-block">
+      <div class="question-text">¿Cuál es la empresa a la que más negocios le hemos perdido? ¿Por qué ganaron?</div>
+      <textarea data-key="s5_comp_pierde" placeholder="Nombres específicos..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="question-block">
+      <div class="question-text">¿El bundle Solar + Roofing abre conversaciones o las complica?</div>
+      <div class="question-context">Cuando lo mencionas en una llamada de solar, ¿el cliente se emociona o se confunde?</div>
+      <textarea data-key="s5_bundle" placeholder="¿Qué pasa cuando lo mencionas?" rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(4)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(6)">Ejercicio 4 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S6: EJERCICIO 4 — MENSAJES ═══ -->
+<div class="section" id="s6">
+  <div class="content-wrap">
+    <p class="section-label">Ejercicio 4 de 5 · 20 min</p>
+    <h2 class="section-title">¿Qué palabras<br>mueven a la gente?</h2>
+    <div class="divider"></div>
+    <div class="agent-speaks">
+      <div class="agent-avatar">✍️</div>
+      <div class="agent-info">
+        <div class="agent-name">Daniela · Mensajes</div>
+        <div class="agent-text">"Voy a robarme tus palabras. El mejor copy viene del campo, no de una agencia."</div>
+      </div>
+    </div>
+    <p style="font-size:12px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:16px;font-weight:700">Reacciona a cada territorio desde el campo</p>
+    <div id="territories">
+      <div class="terr-card">
+        <div class="terr-header" onclick="toggleTerr(this)">
+          <div><div class="terr-name">ONE ROOF</div><div class="terr-tagline">"Un Solo Techo. Todo Bajo Control."</div></div>
+          <span class="terr-toggle">+</span>
+        </div>
+        <div class="terr-body">
+          <p class="terr-desc">Solar + roofing bajo una sola empresa. WindMar instaló tu techo — sabemos exactamente qué hay debajo de los paneles. Nadie más en FL puede decir eso.</p>
+          <textarea data-key="s6_oneroof" placeholder="¿Esto es un diferenciador real o solo marketing? ¿El cliente lo valora?" rows="3"></textarea>
+          <button class="capture-btn" onclick="captureBtn(this)" style="margin-top:10px">✓ Capturar</button>
+        </div>
+      </div>
+      <div class="terr-card">
+        <div class="terr-header" onclick="toggleTerr(this)">
+          <div><div class="terr-name">THE QUIET GRID</div><div class="terr-tagline">"Hazte Independiente."</div></div>
+          <span class="terr-toggle">+</span>
+        </div>
+        <div class="terr-body">
+          <p class="terr-desc">Casa por casa, construyendo una red silenciosa. Tu casa no necesita el permiso de FPL para mantenerse encendida. Para los boricuas de Orlando que vivieron María o Fiona, esto no es abstracto.</p>
+          <textarea data-key="s6_quietgrid" placeholder="¿'Independencia energética' es un trigger poderoso? ¿Con cuál perfil?" rows="3"></textarea>
+          <button class="capture-btn" onclick="captureBtn(this)" style="margin-top:10px">✓ Capturar</button>
+        </div>
+      </div>
+      <div class="terr-card">
+        <div class="terr-header" onclick="toggleTerr(this)">
+          <div><div class="terr-name">BUILT FOR THIS</div><div class="terr-tagline">"Hechos Para Esto."</div></div>
+          <span class="terr-toggle">+</span>
+        </div>
+        <div class="terr-body">
+          <p class="terr-desc">24 años instalando solar en el Caribe. Tesla Powerwall Certified. Y sabemos de techos. WindMar fue construido para exactamente este mercado.</p>
+          <textarea data-key="s6_builtforthis" placeholder="¿El historial de PR genera credibilidad en FL o confusión?" rows="3"></textarea>
+          <button class="capture-btn" onclick="captureBtn(this)" style="margin-top:10px">✓ Capturar</button>
+        </div>
+      </div>
+      <div class="terr-card">
+        <div class="terr-header" onclick="toggleTerr(this)">
+          <div><div class="terr-name">FLORIDA-PROOFED</div><div class="terr-tagline">"A Prueba de Florida."</div></div>
+          <span class="terr-toggle">+</span>
+        </div>
+        <div class="terr-body">
+          <p class="terr-desc">El sol de Florida genera el 30% de tu factura de luz. Las tormentas amenazan tu acceso a la red. Florida-Proofed = solar + battery + el techo debajo de todo.</p>
+          <textarea data-key="s6_floridaproofed" placeholder="¿El ángulo del sol (factura) o el ángulo de la tormenta (resiliencia)?" rows="3"></textarea>
+          <button class="capture-btn" onclick="captureBtn(this)" style="margin-top:10px">✓ Capturar</button>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin:28px 0 16px;font-weight:700">Completa estas frases</p>
+    <div class="question-block">
+      <div class="fill-line">La razón real por la que alguien en Florida va solar ahora — no el año que viene — es <input class="fill-input" data-key="s6_fill1" placeholder="escribe aquí..."></div>
+    </div>
+    <div class="question-block">
+      <div class="fill-line">Cuando mencionamos que somos de Puerto Rico, la reacción típica es <input class="fill-input" data-key="s6_fill2" placeholder="escribe aquí..."></div>
+    </div>
+    <div class="question-block">
+      <div class="fill-line">El momento en que un cliente decide que sí va con WindMar es cuando <input class="fill-input" data-key="s6_fill3" placeholder="escribe aquí..."></div>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(5)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(7)">Ejercicio 5 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S7: EJERCICIO 5 — SISTEMA ═══ -->
+<div class="section" id="s7">
+  <div class="content-wrap">
+    <p class="section-label">Ejercicio 5 de 5 · 15 min</p>
+    <h2 class="section-title">¿Qué necesita marketing<br>para apoyarte mejor?</h2>
+    <div class="divider"></div>
+    <div class="agent-speaks">
+      <div class="agent-avatar">📊</div>
+      <div class="agent-info">
+        <div class="agent-name">Julian + Felipe</div>
+        <div class="agent-text">"Tú estás en el campo. Nosotros diseñamos desde una pantalla en Puerto Rico. Cierra esa brecha."</div>
+      </div>
+    </div>
+    <p style="font-size:12px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-bottom:14px;font-weight:700">¿Qué materiales te faltan?</p>
+    <div class="check-list" id="checklist">
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Calculadora de ahorro real (factura actual → con solar)</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Videos de clientes reales en Florida (no de PR)</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Guía paso a paso del federal tax credit</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Comparativo Tesla Powerwall vs. otras baterías</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Before/after de instalaciones reales en FL</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Script para manejar objeción "free solar" de SunVena</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Guía HOA: cómo manejar restricciones de paneles</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Materiales en español para mercado hispano FL</span></label>
+      <label class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Kit de referidos post-instalación solar</span></label>
+    </div>
+    <div class="question-block" style="margin-top:24px">
+      <div class="question-text">¿Cuál es el mayor obstáculo desde que alguien ve el anuncio hasta que firma?</div>
+      <textarea data-key="s7_obstaculo" placeholder="El punto donde se rompe el proceso..." rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="question-block">
+      <div class="question-text">El 35% de Orlando es hispano. 54K puertorriqueños. ¿Qué cambia en tu pitch cuando el cliente es hispano?</div>
+      <textarea data-key="s7_hispano" placeholder="¿Qué cambia específicamente?" rows="3"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="question-block">
+      <div class="question-text">Si pudieras decirle UNA COSA al equipo de marketing en PR que diseña tu campaña — sin filtro — ¿qué sería?</div>
+      <textarea data-key="s7_mensaje" placeholder="Sin protocolo. Sin filtro." rows="4" style="font-size:16px"></textarea>
+      <button class="capture-btn" onclick="captureBtn(this)">✓ Capturar</button>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(6)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(8)">El gran insight →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S8: EL GRAN INSIGHT ═══ -->
+<div class="section" id="s8">
+  <div style="max-width:760px;width:100%;text-align:center">
+    <p style="font-size:clamp(16px,2.5vw,20px);color:rgba(255,255,255,0.5);font-style:italic;line-height:1.7;margin-bottom:12px">"Sin Cuentos nació de descubrir que la gente no compra paneles."</p>
+    <p style="font-size:clamp(18px,3vw,26px);color:rgba(255,255,255,0.8);font-style:italic;line-height:1.6;margin-bottom:40px">Compra <span style="color:#F2C94C;font-weight:700">tranquilidad.</span> Para Florida, el insight puede ser diferente.</p>
+    <p style="font-size:clamp(20px,3vw,30px);font-weight:700;color:#FFFFFF;margin-bottom:24px;line-height:1.4">Para el mercado solar de Florida,<br>el insight que define la campaña es:</p>
+    <textarea data-key="s8_insight" placeholder="El insight que lo cambia todo..." style="font-size:18px;min-height:120px;text-align:center;max-width:600px" rows="4"></textarea>
+    <textarea data-key="s8_insight_why" placeholder="¿Por qué este insight — y no otro?" style="font-size:15px;margin-top:16px;max-width:600px" rows="3"></textarea>
+    <p style="font-size:11px;letter-spacing:2px;color:#F89B24;text-transform:uppercase;margin-top:14px;font-weight:700">Fercho: "Esta respuesta es el norte de toda la estrategia creativa."</p>
+    <div class="nav-buttons" style="justify-content:center">
+      <button class="btn-secondary" onclick="goTo(7)">← Atrás</button>
+      <button class="btn-primary" onclick="goTo(9)">Ver cierre →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ S9: CIERRE ═══ -->
+<div class="section" id="s9">
+  <div class="content-wrap" style="text-align:center">
+    <p class="section-label" style="text-align:center">Lo que pasa después de hoy</p>
+    <h2 class="section-title" style="text-align:center">El campo habló.</h2>
+    <div class="divider" style="margin:20px auto 32px"></div>
+    <div class="timeline" style="max-width:560px;margin:0 auto 40px;text-align:left">
+      <div class="tl-item"><div class="tl-dot">✓</div><div class="tl-date">Hoy</div><div class="tl-title">Workshop completado</div><div class="tl-desc">Respuestas capturadas. Inteligencia del campo lista.</div></div>
+      <div class="tl-item"><div class="tl-dot">→</div><div class="tl-date">Esta semana</div><div class="tl-title">Los agentes procesan</div><div class="tl-desc">Brief v2 en construcción con insights del campo.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Apr 25</div><div class="tl-title">Brief Solar FL aprobado</div><div class="tl-desc">Con todos los insights de esta sesión.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May 2</div><div class="tl-title">Territorio creativo seleccionado</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May 20</div><div class="tl-title">Landing page Solar FL en vivo</div></div>
+      <div class="tl-item tl-launch"><div class="tl-dot" style="border-color:#00A651;color:#00A651">☀️</div><div class="tl-date" style="color:#00A651">Junio</div><div class="tl-title" style="color:#00A651">LAUNCH — Solar FL Campaign</div><div class="tl-desc">$5,500/mes → escala a $12,500 cuando el modelo prueba.</div></div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px">
+      <button class="btn-gold" onclick="exportAnswers()">📄 Exportar respuestas</button>
+      <button class="btn-primary" onclick="saveToGitHub()">💾 Guardar en GitHub</button>
+    </div>
+    <p style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(20px,4vw,40px);font-weight:700;line-height:1.3;color:rgba(255,255,255,0.5)">"Florida no nos conoce todavía."</p>
+    <p style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(20px,4vw,40px);font-weight:700;line-height:1.3;color:#FFFFFF">"Eso no es un problema."</p>
+    <p style="font-family:'Montserrat',sans-serif;font-style:italic;font-size:clamp(20px,4vw,40px);font-weight:700;line-height:1.3;color:#F2C94C">"Es nuestra ventaja."</p>
+    <p style="font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-top:48px;text-transform:uppercase">WindMar Home · Florida 2026 · Solar Levantamiento</p>
+    <div class="nav-buttons" style="justify-content:center;margin-top:24px">
+      <button class="btn-secondary" onclick="goTo(8)">← Atrás</button>
+      <button class="btn-secondary" onclick="goTo(0)">↺ Reiniciar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════
+// STATE
+// ═══════════════════════════════════
+let currentSection = 0;
+const TOTAL = 10;
+const answers = JSON.parse(localStorage.getItem('solar-lev') || '{}');
+
+// ═══════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════
+function goTo(idx) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('s' + idx).classList.add('active');
+  currentSection = idx;
+  window.scrollTo(0, 0);
+
+  // Update nav
+  const labels = ['Intro','Tu equipo','El mercado','Ejercicio 1','Ejercicio 2','Ejercicio 3','Ejercicio 4','Ejercicio 5','El insight','Cierre'];
+  document.getElementById('nav-step').textContent = labels[idx] || '';
+  document.getElementById('nav-progress').textContent = (idx + 1) + ' / ' + TOTAL;
+
+  // Update progress bar
+  const pct = ((idx) / (TOTAL - 1)) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  save();
+}
+
+// ═══════════════════════════════════
+// PERSONA TAGS
+// ═══════════════════════════════════
+document.querySelectorAll('.ptag').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    btn.classList.toggle('on');
+    save();
+  });
+});
+
+// ═══════════════════════════════════
+// OBJECTION RANKING
+// ═══════════════════════════════════
+function moveObj(btn, dir) {
+  const item = btn.closest('.obj-item');
+  const list = item.parentElement;
+  if (dir === -1 && item.previousElementSibling) list.insertBefore(item, item.previousElementSibling);
+  else if (dir === 1 && item.nextElementSibling) list.insertBefore(item.nextElementSibling, item);
+  updateObjRanks();
+}
+function updateObjRanks() {
+  document.querySelectorAll('#obj-list .obj-item').forEach((item, i) => {
+    const rank = item.querySelector('.obj-rank');
+    rank.textContent = i + 1;
+    rank.classList.add('set');
+  });
+  save();
+}
+
+// ═══════════════════════════════════
+// TERRITORY TOGGLE
+// ═══════════════════════════════════
+function toggleTerr(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.terr-toggle');
+  body.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+
+// ═══════════════════════════════════
+// ADD COMP ROW
+// ═══════════════════════════════════
+function addCompRow() {
+  const row = document.createElement('tr');
+  row.innerHTML = '<td contenteditable="true" data-ph="Nombre del competidor" style="font-weight:700;color:#FFFFFF"></td><td contenteditable="true" data-ph="¿Qué hace bien?"></td><td contenteditable="true" data-ph="¿Cómo ganamos?"></td>';
+  document.getElementById('comp-tbody').appendChild(row);
+}
+
+// ═══════════════════════════════════
+// CHECKLIST
+// ═══════════════════════════════════
+function toggleCheck(el) { el.classList.toggle('checked'); save(); }
+
+// ═══════════════════════════════════
+// CAPTURE BUTTON
+// ═══════════════════════════════════
+function captureBtn(btn) {
+  btn.textContent = '✅ Capturado';
+  btn.classList.add('captured');
+  save();
+  triggerAutosave();
+}
+
+// ═══════════════════════════════════
+// TEXTAREAS
+// ═══════════════════════════════════
+document.querySelectorAll('textarea').forEach(ta => {
+  ta.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+    save();
+    triggerAutosave();
+  });
+  if (answers[ta.dataset.key]) {
+    ta.value = answers[ta.dataset.key];
+    ta.style.height = ta.scrollHeight + 'px';
+  }
+});
+
+document.querySelectorAll('.fill-input').forEach(inp => {
+  inp.addEventListener('input', () => { save(); triggerAutosave(); });
+  if (answers[inp.dataset.key]) inp.value = answers[inp.dataset.key];
+});
+
+// ═══════════════════════════════════
+// SAVE
+// ═══════════════════════════════════
+function save() {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    answers[el.dataset.key] = el.value || el.textContent || '';
+  });
+  // Persona tags
+  answers._personaTags = {};
+  document.querySelectorAll('.ptag.on').forEach(btn => {
+    const key = btn.dataset.persona + '_' + btn.dataset.tag;
+    answers._personaTags[key] = true;
+  });
+  // Obj order
+  answers._objOrder = Array.from(document.querySelectorAll('#obj-list .obj-text')).map(el => el.textContent.trim());
+  // Checklist
+  answers._checklist = Array.from(document.querySelectorAll('.check-item.checked .check-label')).map(el => el.textContent.trim());
+  localStorage.setItem('solar-lev', JSON.stringify(answers));
+}
+
+// ═══════════════════════════════════
+// AUTOSAVE TO GITHUB VIA API
+// ═══════════════════════════════════
+let autosaveTimer = null;
+function triggerAutosave() {
+  clearTimeout(autosaveTimer);
+  autosaveTimer = setTimeout(saveToGitHub, 5000);
+}
+
+async function saveToGitHub() {
+  const status = document.getElementById('save-status');
+  status.textContent = '💾 Guardando...';
+  status.className = 'save-status show saving';
+  try {
+    const now = new Date();
+    const fileDate = now.toISOString().slice(0,16).replace('T','_').replace(':','-');
+    const rand = Math.random().toString(36).slice(2,6);
+    const path = `responses/${fileDate}_${rand}.json`;
+    const res = await fetch('/api/save', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ product: 'solar', path, content: { ...answers, timestamp: now.toISOString(), section: currentSection } })
+    });
+    if (res.ok) {
+      status.textContent = '✅ Guardado';
+      status.className = 'save-status show saved';
+    } else throw new Error('Save failed');
+  } catch(e) {
+    status.textContent = '⚠️ Solo local';
+    status.className = 'save-status show error';
+  }
+  setTimeout(() => status.classList.remove('show'), 3000);
+}
+
+// ═══════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════
+function exportAnswers() {
+  const now = new Date().toLocaleString('es-PR', {timeZone:'America/Puerto_Rico'});
+  let out = `WINDMAR HOME — SOLAR FL 2026\nWORKSHOP DE LEVANTAMIENTO\nFecha: ${now}\n${'='.repeat(60)}\n\n`;
+  const sections = [
+    {title:'PERSONAS', keys:['s3_perfil_faltante','s3_dificil']},
+    {title:'OBJECIONES', keys:['s4_objecion_real','s4_powerwall']},
+    {title:'COMPETENCIA', keys:['s5_comp_pierde','s5_bundle']},
+    {title:'MENSAJES', keys:['s6_oneroof','s6_quietgrid','s6_builtforthis','s6_floridaproofed','s6_fill1','s6_fill2','s6_fill3']},
+    {title:'SISTEMA', keys:['s7_obstaculo','s7_hispano','s7_mensaje']},
+    {title:'EL GRAN INSIGHT', keys:['s8_insight','s8_insight_why']},
+  ];
+  sections.forEach(s => {
+    out += `\n${s.title}\n${'-'.repeat(40)}\n`;
+    s.keys.forEach(k => { if (answers[k]?.trim()) out += `\n[${k}]\n${answers[k]}\n`; });
+  });
+  if (answers._objOrder?.length) { out += `\nORDEN DE OBJECIONES:\n`; answers._objOrder.forEach((o,i) => out += `${i+1}. ${o}\n`); }
+  if (answers._checklist?.length) { out += `\nMATERIALES SOLICITADOS:\n`; answers._checklist.forEach(c => out += `• ${c}\n`); }
+  const blob = new Blob([out], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `WindMar_Solar_FL_Levantamiento.txt`;
+  a.click();
+}
+
+// Init
+goTo(0);
+</script>
+</body>
+</html>
