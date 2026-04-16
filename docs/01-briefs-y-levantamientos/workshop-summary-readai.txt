@@ -1,0 +1,152 @@
+Florida Media Campaign- Solar Products Session
+Thu, Apr 16, 2026
+
+Summary:
+
+La reunión tuvo como propósito definir la estrategia comercial y de mercadeo para introducir productos solares en Florida, un mercado identificado con 14,000 megavatios instalados y tercero en importancia en EE. UU., donde la marca no tiene el mismo reconocimiento que en Puerto Rico. Se repasó el trabajo del equipo de diseño, que está entrevistando a vendedores locales para generar insumos creativos, y se acordó procesar esos hallazgos con modelos de inteligencia artificial para resumir insights y compartir enlaces internos.
+
+La discusión abordó las audiencias objetivo, incluyendo comunidades puertorriqueñas, compradores sensibles al precio, propietarios con sistemas parciales y seguidores de Tesla, y evaluó oportunidades de upsell en desarrollos nuevos como Lennar. Se analizaron objeciones recurrentes —credibilidad del instalador, dudas sobre facturación, edad, estado del techo y duración de contratos— y se propusieron respuestas comerciales concretas como mostrar comparativas de facturas, garantías y evidencia social. Finalmente se revisaron problemas de SEO y presencia física en Florida, y se discutieron mensajes efectivos (ahorro, seguridad, protección, confianza) y tácticas creativas para aumentar awareness en un mercado distinto al de Puerto Rico.
+
+
+Chapters & Topics:
+
+Apertura y asistencia
+Se registraron saludos informales y confirmación de asistencia de varios participantes, incluyendo a Ronald, Claudia, Aaron y otros miembros presentes en la sala de conferencias. También se indicó que se enviaría un enlace para la presentación y que algunos participantes tendrían la cámara apagada temporalmente por estar comiendo.
+
+Preparación de la presentación y logística
+Se solicitó a los participantes abrir la presentación titulada "Solar Levantamiento Vercel" y se explicó que la sesión sería grabada y que el contenido se usaría para generar insights por IA. Se aclaró que el equipo de diseño interno entrevistaría a los vendedores como si fueran clientes para luego presentar alternativas de campaña.
+
+Contexto del mercado solar en Florida
+Se discutió que Florida es un mercado nuevo para la agencia interna, con cifras de instalación y hallazgos preliminares sobre incentivos fiscales y conciencia pública sobre la red eléctrica. Se resaltó que, aunque hay preocupación por la red, Wynmar aún no tiene high brand awareness en la región.
+* El objetivo es desarrollar una campaña de marca para solar en Florida a partir de un levantamiento de información local
+* El equipo grabará el contenido y utilizará IA para generar resúmenes e insights que se compartirán con el equipo
+* Florida tiene 14,000 megavatios solares instalados y es el mercado número 3 en EE. UU., según research preliminar
+* Wynmar carece de brand awareness en Florida en comparación con Puerto Rico
+
+Perfil del consumidor y necesidades de educación
+El equipo comentó que muchos residentes son inmigrantes que desconocen normativas locales y mantenimiento de viviendas, lo que genera problemas cuando suben las tarifas eléctricas y crea una oportunidad para educar y vender soluciones solares. Se recalcó la necesidad de comunicar claramente impactos como incrementos del 5-10% en tarifas y requisitos legales.
+* Existe una necesidad clara de educar a inmigrantes y nuevos propietarios sobre leyes locales, mantenimiento y aumentos en tarifas eléctricas
+
+Ejercicio para definir audiencias objetivo
+Se inició un ejercicio para identificar a quién vender solar en Florida, planteando hipótesis sobre audiencias como la comunidad boricua local y compradores sensibles al precio, y evaluando cuál es más fácil de cerrar según valor versus precio. El grupo debatió que el comprador que busca ahorro es más fácil de cerrar, aunque podría no ser la demografía objetivo principal.
+* Se planteó como audiencia prioritaria la comunidad boricua en Florida, aunque hay debate sobre orientar a buscadores de ahorro versus compradores por valor
+
+Estrategia estacional y ahorro por tarifas
+Se debatió cómo la estacionalidad y las tarifas eléctricas afectan la conveniencia de ofrecer baterías, con énfasis en ofrecer baterías de abril a agosto para asegurar ahorro frente a la utilidad en verano y en temporada de huracanes. También se señaló que en invierno la batería puede no representar ahorro para ciertos clientes, por lo que algunos vendedores no la ofrecen en esa época.
+* La venta de baterías funciona mejor en meses de alta tarifa y temporada de huracanes por el ahorro visible frente a la utilidad.
+
+Variación por utilidad y mercados regionales
+Los participantes enfatizaron que el pitch debe adaptarse a la utilidad local porque políticas como net metering y precios por kWh varían, lo que impacta la efectividad del mensaje de ahorro. Se discutió que algunas utilidades (ej., Duke) son más favorables para demostrar ahorro y que la frecuencia de cortes y la exposición a huracanes también cambian el valor percibido de la batería.
+
+Segmentación de audiencias y oportunidades
+Se propusieron audiencias específicas: nuevas propiedades con sistemas parciales (Lennar), seguidores de Tesla y clientes tecnológicos, y comunidades donde ya hay instalaciones solares pequeñas que permiten upsell de baterías. También se mencionó que el pitch para seguidores de Tesla puede centrarse en el cargador doméstico y el ecosistema.
+* El pitch debe adaptarse por utilidad: en unos mercados la batería es backup y en otros es ahorro por precios variables y horas pico.
+* Existe una oportunidad de upsell en desarrollos nuevos que ya incluyen sistemas solares parciales (p. ej. Lennar).
+* Un segmento valioso es el de seguidores de Tesla que priorizan tecnología y pagar por ecosistemas (charger + batería).
+
+Perfil de clientes y enfoque de venta de Miguel
+Miguel explicó que su audiencia principal son propietarios que ya tienen sistema solar, lo que facilita la venta de baterías porque la mayoría de esos sistemas en Florida no incluyen baterías y las horas pico están generando demanda de baterías.
+* Vender a clientes que ya tienen sistema solar es más sencillo y representa la mayoría de las ventas de batería de algunos vendedores.
+
+Diferenciador competitivo y reputación
+El grupo identificó la experiencia instalando más de 50,000 baterías y la capacidad de ofrecer baterías como un diferenciador que mejora el standing comercial de la empresa. Se pidió apartarse del “price shopper” y centrarse en valor y confianza.
+
+Clientes fáciles y difíciles de cerrar
+Se analizó qué perfiles son más fáciles o más difíciles: los compradores que ya tienen solar o casas nuevas con historial claro pueden ser fáciles, mientras que clientes que compran por precio o clientes descontentos con la industria son los más difíciles de cerrar.
+
+Objeciones frecuentes y tácticas de respuesta
+Se identificaron objeciones comunes —edad del comprador, preocupaciones por daño al techo y rechazo al valor de la batería— y se describieron respuestas: presentar facturas comparativas, garantizar protección del techo y enmarcar la compra como inversión/legado para combatir temores de edad o pago a largo plazo.
+* El comprador que compara precios es el cliente más difícil de cerrar para varios vendedores.
+* Objeciones recurrentes son la edad del comprador, el estado del techo y la falta de percepción del valor de la batería.
+* Mejorar reseñas (Google/BBB) puede reducir cancelaciones postventa entre clientes americanos preocupados por reviews.
+
+Objeciones generales y apertura de conversación
+El equipo inició identificando objeciones comunes de clientes y pidió ejemplos concretos para discutir. Ronald explicó que muchos prospectos dicen que deben consultarlo con su esposa o con alguien más y atribuyó esto a falta de credibilidad o escepticismo por cifras muy favorables.
+* La falta de credibilidad genera la objeción de “lo consulto con mi esposa” y se combate mostrando evidencia y repitiendo el valor ofrecido.
+
+Tácticas para recuperar credibilidad y herramientas de demostración
+Se propusieron tácticas prácticas como repetir la propuesta, mostrar mensajes y un mapa con instalaciones para generar confianza, y varios participantes confirmaron el uso efectivo de estas herramientas en citas.
+* Mostrar un mapa de instalaciones y métricas públicas impresiona a los clientes y reduce su desconfianza.
+
+Doble facturación y soporte técnico en el cierre
+Miguel explicó que muchas objeciones por fraude o doble facturación se resuelven leyendo la factura y explicando que la falta de batería provoca cargos en horas pico, y que el equipo técnico (Chachipiti) ayuda a reforzar la credibilidad técnica.
+* La “doble facturación” suele explicarse por ventas a horas pico y la ausencia de batería, lo que requiere lectura detallada del bill y explicación técnica.
+
+Manejo humano del cliente y seguimiento postventa
+Se habló de la importancia del esfuerzo relacional para rescatar clientes difíciles, incluyendo visitas repetidas y alimentación de la relación, y de la velocidad de instalación como factor que reduce el tiempo de fricción para el cliente.
+
+Competencia, percepción de la industria y credibilidad corporativa
+Abdiel y otros discutieron la caída de competidores y la consiguiente incertidumbre del cliente sobre la estabilidad de proveedores, y propusieron mostrar presencia física y referencias para transmitir solidez.
+* Llevar representantes o mostrar presencia física en la oficina aumenta la confianza de clientes preocupados por la estabilidad de la empresa.
+* El argumento de instalación y servicio del contratista es crítico para mitigar el miedo a quiebras de empresas en el mercado.
+* El récord Guinness y la mención de Tesla son poderosos elementos de credibilidad que facilitan el acceso a la conversación con el cliente.
+
+Mensajes efectivos y posicionamiento de marketing
+Se identificaron palabras y marcos que mueven a los clientes (ahorro, seguridad, protección, independencia energética) y se recomendó usar el récord Guinness y la asociación con Tesla como ganchos de credibilidad en las campañas y presentaciones comerciales.
+* Palabras clave para mover a clientes en Florida incluyen ahorro, seguridad y protección, pero deben enmarcarse con credenciales y ejemplos concretos.
+
+Acciones iniciales de SEO y cambios urgentes
+El equipo reconoció deficiencias en SEO y páginas de lanzamiento y describió una visita rápida a un agente para analizar la búsqueda pagada. Se informó que se hicieron cambios inmediatos en el Call to Action en menos de diez minutos y que un agente de SEO fue desplegado para arreglar los problemas.
+* Se activó un agente de SEO para corregir problemas detectados y ya se hicieron cambios en el Call to Action.
+
+Diagnóstico de mercadeo en Florida y falta de consistencia en redes
+Se identificó que el marketing en Florida carece de consistencia en redes sociales y de presencia en zonas clave, y se preguntó qué necesita la región para mejorar el awareness. El equipo puntualizó ausencia de publicaciones recurrentes y poca visibilidad fuera de lugares como Saint Cloud.
+* El equipo identificó falta de consistencia en las redes sociales de Florida como un problema clave.
+* Hay que aumentar la presencia física y visual en centros comerciales y vía camiones para mejorar el reconocimiento de marca..
+
+Presencia de marca y formato creativo de anuncios
+Se discutió aumentar la visibilidad física (camiones, banners) y usar contenido entretenido para captar la atención en los breves momentos de consumo digital de la audiencia floridana. Se señaló que la percepción y las necesidades del mercado en Florida son más complejas que en Puerto Rico y requieren mayor profundidad en el mercadeo.
+* El público objetivo en Florida requiere repetición y contenidos más entretenidos por su bajo tiempo de consumo de medios.
+
+Estrategias de social media y estacionalidad
+Abdiel propuso presencia diaria en redes y adaptar mensajes a la temporada (ej. huracanes) y comentó ventas atribuibles a banners en Saint Cloud y a esfuerzos en Home Depot. Se sugirió usar campaigns de recruiting y branding para generar más citas y setters en puntos de venta.
+* Aprovechar la temporada de huracanes para campañas que generen urgencia fue propuesto como táctica inmediata.
+
+Propuesta táctica: entrar por techos y vender solar como complemento
+Se presentó la idea de usar campañas de techo para entrar a la casa y luego ofrecer solar como upsell, lo que se definió como una venta garantizada y una estrategia win-win en zonas con proveedores como Duke. El equipo debatió que entrar físicamente al hogar es prioritario para cerrar ventas.
+* Entrada por campañas de techos para luego vender solar fue presentada como una estrategia de cross-sell efectiva.
+
+Ventas en sitio, seguimiento y acuerdos de cierre
+Se enfatizó que, tras obtener la visita al hogar, el cierre depende del equipo de ventas y se validó la preferencia por ventas presenciales aunque algunas ventas por teléfono también han sido efectivas. Se acordó procesar y enviar resultados en el chat, coordinar con Claudia Cate y entregar propuestas para el martes siguiente con intención de lanzar campañas rápidamente.
+* Se acordó enviar resultados, coordinar con Claudia Cate y preparar propuestas para el martes para poder lanzar campañas pronto.
+
+
+Action Items:
+
+* Participante de la sala de conferencias: Compartir el enlace de la presentación con todo el equipo
+* Equipo de medios/Marc: Grabar el contenido y procesar los insights con IA para generar un resumen que se comparta con el equipo
+* Vendedores de Florida: Proveer feedback y responder las preguntas del equipo de diseño durante el ejercicio de levantamiento
+* División de diseño de Wynmar: Preparar y presentar alternativas de campaña basadas en el levantamiento y el feedback de ventas
+* Aaron Myers: Abrir y confirmar acceso al enlace compartido para la presentación
+* Juan Sebastian Muñoz Gonzalez: Preparar paquetes de ventas con facturas comparativas por zona (april–agosto vs invierno) para mostrar ahorro frente a la utilidad
+* Conference Room: Revisar datos de ventas por temporada y utilidad para confirmar correlaciones entre temporada y venta de baterías
+* Conference Room: Desarrollar materiales de pitch diferenciados por utilidad (backup vs savings) para que vendedores adapten el mensaje por mercado
+* Conference Room: Coordinar con marketing una campaña dirigida a comunidades con sistemas parciales (por ejemplo, áreas con Sunova/Lenar) para ofrecer upsell de baterías
+* Abdiel Mendez: Implementar un enlace para solicitar reseñas a clientes tras la instalación y promover que dejen reviews en Google/BBB
+* Conference Room: Investigar e implementar integración o estrategia para mejorar el Business Bureau (BBB) y la visibilidad de reseñas para clientes americanos
+* Abdiel Mendez: Traer a Sol a la oficina a las 3 de la tarde para mostrar la empresa y aumentar la confianza del cliente
+* Agente de SEO: Arregla los problemas de SEO identificados en la página
+* Equipo de mercadeo: Publica contenido consistente en las redes de Florida
+* Participante de la sala: Envía el link de los resultados en el chat a todos los asistentes
+* Participante de la sala: Coordina una reunión con Claudia Cate para avanzar en producto Humboldt Roofing and Solar
+* Equipo de producto/marketing: Entrega los resultados y las propuestas para el martes próximo
+* Julián: Lanza la campaña en Allame según lo discutido y priorizado por el equipo
+
+
+Key Questions:
+
+* ¿A quién le vendemos solar en Florida?
+* ¿Qué tan común es vender baterías en estos mercados?
+* ¿Ves la misma correlación estacional en tu lado del mercado?
+* ¿Tenemos audiencias que faltan por considerar?
+* ¿Cuáles son las objeciones más comunes que enfrentan los vendedores?
+* ¿Qué objeción es la más común entre los clientes indecisos?
+* ¿Cómo se combate la falta de credibilidad en el discurso de ventas?
+* ¿Por qué ocurre la “doble facturación” que mencionan los clientes?
+* ¿Qué pregunta hacen los clientes sobre la continuidad de la compañía y cómo responderla?
+* ¿Cuál es la mejor manera de vender: en persona o por teléfono?
+
+
+Notepad:
+
+* No notes

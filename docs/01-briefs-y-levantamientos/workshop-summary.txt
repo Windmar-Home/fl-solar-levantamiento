@@ -1,0 +1,50 @@
+04-16 Florida Solar Market Strategy Workshop
+
+[image]
+
+# Florida Solar Market Strategy Workshop
+
+[image]
+
+This document outlines the framework of a strategic workshop focused on developing a marketing campaign for Winmark's solar offerings in the Florida market. The discussion progresses from an analysis of the current market landscape and customer profiles to an examination of sales objections, competitive pressures, and concludes with actionable feedback for crafting a resonant and effective marketing and brand strategy.
+---
+[image]
+
+## Florida Market Analysis and Positioning
+This section establishes the foundational context of the Florida solar market. Winmark's brand awareness in Florida is significantly lower than in its established Puerto Rico market, though it retains recognition among former Puerto Rican residents who have relocated. As the third-largest solar market in the United States with 14,000 megawatts installed, Florida presents a substantial opportunity. However, a primary challenge is the widespread lack of customer knowledge regarding local energy laws, annual utility rate increases of 5-10%, and the specific structural needs of Florida homes. This educational gap means many homeowners only recognize the problem when their electricity bills reach levels like $500. The team acknowledges a collective underestimation of the market's complexity, describing the perception, economic, utility, and demographic challenges as "10x" greater than initially thought, necessitating a more thorough and nuanced strategic approach.
+
+---
+## Profiling the Florida Solar Customer
+This section focuses on identifying and segmenting the target audience for solar in Florida. The team distinguishes between the "Savings Seeker," who is common but may not be the ideal target for a value-based company, and the "Price Shopper," who is considered the most difficult customer to close due to a focus on finding the lowest cost. A key persona is the "Resilience Planner," who is motivated by hurricane preparedness and energy independence, a motivation heightened in areas like Tampa (Brandon) that have experienced power outages lasting 15-20 days. Another valuable segment is the "Tesla Tech Enthusiast," a customer drawn to advanced technology and the prestige of the Tesla brand, including integrated home chargers. For these individuals, the Tesla ecosystem is often the primary draw, with the solar panels being a secondary component.
+
+The sales strategy must be highly adaptive, as the pitch varies significantly based on the customer's utility provider (e.g., Duke, Piedmont, OUC, CECO). Factors like electricity costs, which can be as high as 21-23 cents per kilowatt-hour with Duke and Piedmont, and differing net metering policies dictate the sales approach. In Florida, batteries serve a dual purpose of backup power and efficiency savings, particularly in markets with variable pricing. The team also identified a specific opportunity with "Add-on" customers who have pre-existing partial systems (e.g., from Sunova) and can be easily upsold.
+
+---
+## Overcoming Sales Objections and Competitive Threats
+This section details the primary obstacles encountered during the sales process. A common objection stems from customer distrust, with many feeling a proposal is "too good to be true" or harboring skepticism from negative experiences with other solar companies. Standard deferrals like "I need to think about it" are also prevalent. Effective rebuttal strategies shared by the team include using an interactive installation map to visually demonstrate the company's extensive presence and credibility. Another innovative tactic involves leveraging third-party validation by using ChatGPT to explain complex billing issues (e.g., double billing due to peak hours without a battery) and to provide an objective overview of Winmark's reputable history.
+
+The competitive landscape is challenging, with competitors like Equity Solar reportedly giving away free batteries. Winmark's strategy is to compete not on price but on the strength of its structure, extensive experience, and years in business. A significant market challenge is customer uncertainty about company longevity, with many asking, "What happens if you are not here next year?" The team emphasizes that educating the customer is the only way to overcome these hurdles and differentiate Winmark's value proposition.
+
+---
+## Formulating a Resonant Marketing and Messaging Strategy
+This section synthesizes the team's recommendations for the new marketing campaign. The discussion identifies powerful keywords and themes that resonate with Florida customers, including **security, protection, value, trust, and service**. The **Tesla** brand and Winmark's **Guinness World Record** for battery installations are highlighted as key trust-building assets.
+
+The team provided direct feedback to the marketing department, identifying several critical needs. There is a strong call for a consistent and active social media presence in Florida, which is currently perceived as non-existent. The team also advocates for increasing physical brand visibility through presence in shopping malls and more logos on the street. A key strategic recommendation is to adopt an "edutainment" content style—combining advertisement with entertainment—to capture audience attention and explain complex market problems in an engaging way. This approach is seen as essential for educating a market where many people are "tired of solar" and unaware they even have a problem. The ultimate marketing goal is to build a comprehensive sales funnel that addresses customers at all stages of awareness.
+
+---
+## Action Items
+
+**@Speaker_3**
+- [ ] Process the workshop discussion and send the link to the results via the group chat - [TBD]
+- [ ] Follow up with Claudia Kate - [TBD]
+
+**@Marketing_Team**
+- [ ] Develop and implement a consistent posting schedule for Florida social media channels - [TBD]
+- [ ] Create a proposal for increasing physical brand visibility (e.g., shopping malls, street logos) - [TBD]
+- [ ] Explore and develop "edutainment" style content to engage and educate the Florida market - [TBD]
+- [ ] Incorporate a link for customers to leave reviews (e.g., on BBB) post-installation - [TBD]
+- [ ] Investigate SEO improvements and landing page optimizations based on Aaron's feedback - [TBD]
+
+**@Recruitment_Team**
+- [ ] Plan and conduct social media recruiting campaigns, especially during seasonal pushes like hurricane season - [TBD]
+- [ ] Focus recruitment efforts in "centers" to generate more appointments - [TBD]
