@@ -1,0 +1,386 @@
+/* ==========================================================================
+   WindMar – Solar Florida Campaign
+   Visual polish + space maximization + mobile responsiveness
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL BASE
+   -------------------------------------------------------------------------- */
+html, body { overflow-x: hidden; }
+
+body {
+  background:
+    radial-gradient(ellipse at top left, rgba(29, 66, 155, 0.18), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(248, 155, 36, 0.10), transparent 55%),
+    radial-gradient(ellipse at center, rgba(29, 66, 155, 0.05), transparent 70%),
+    linear-gradient(180deg, #060E1F 0%, #0A1228 100%) !important;
+  font-family: 'Montserrat', 'Inter', -apple-system, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+}
+
+* { text-rendering: optimizeLegibility; }
+
+h1, h2, h3, p, .title, .card, .persona-card {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.card h3, .persona-card h3, .seg-name, .terr-label {
+  hyphens: none !important;
+  word-break: normal !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. GREY TEXT → WHITE (legibilidad)
+   -------------------------------------------------------------------------- */
+.muted,
+[class*="muted"] {
+  color: #FFFFFF !important;
+}
+
+:root {
+  --muted: #FFFFFF !important;
+  --gray:  #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. SPACE MAXIMIZATION
+   -------------------------------------------------------------------------- */
+section {
+  padding: clamp(56px, 7vh, 88px) clamp(20px, 4vw, 56px) clamp(40px, 5vh, 64px) !important;
+  min-height: 100vh !important;
+}
+
+.max-w {
+  max-width: min(1440px, 94vw) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.title         { margin-bottom: clamp(12px, 1.5vh, 20px) !important; line-height: 1.05 !important; }
+.eyebrow       { margin-bottom: clamp(8px, 1vh, 14px) !important; }
+.divider       { margin-top: clamp(10px, 1.2vh, 16px) !important;
+                 margin-bottom: clamp(18px, 2.5vh, 32px) !important; }
+
+/* --------------------------------------------------------------------------
+   4. FLUID TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.title, h1.title { font-size: clamp(1.75rem, 4.2vw, 3.5rem) !important; }
+h2               { font-size: clamp(1.5rem, 3.2vw, 2.5rem) !important; line-height: 1.15 !important; }
+h3               { font-size: clamp(1.15rem, 2.2vw, 1.5rem) !important; line-height: 1.2 !important; }
+.eyebrow         { font-size: clamp(0.72rem, 1vw, 0.85rem) !important; }
+
+p, li, td, .card p, .persona-card p, .seg-body, .muted {
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem) !important;
+  line-height: 1.55 !important;
+  color: #FFFFFF !important;
+}
+
+.num                           { font-size: clamp(1.75rem, 3.5vw, 2.75rem) !important; }
+.meta-num, .pillar-num, .flow-num { font-size: clamp(1.5rem, 3vw, 2.25rem) !important; }
+.meta-label                    { font-size: clamp(0.75rem, 1vw, 0.9rem) !important; letter-spacing: 0.08em; }
+
+.card h3, .persona-card h3, .pillar-item h3, .seg-name, .terr-label {
+  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 6px !important;
+}
+
+.pill-chip {
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem) !important;
+  padding: 5px 12px !important;
+}
+
+.data-table th, .data-table td {
+  font-size: clamp(0.85rem, 1.1vw, 1rem) !important;
+  padding: clamp(8px, 1.2vh, 14px) clamp(10px, 1.2vw, 16px) !important;
+}
+
+.card, .persona-card, .pillar-item, .seg-item, .terr-card,
+.flow-item, .tl-item, .meta-item {
+  padding: clamp(14px, 1.8vw, 22px) !important;
+}
+
+.two-col, .three-col { gap: clamp(12px, 1.5vw, 22px) !important; }
+.slide-num           { font-size: clamp(0.75rem, 1vw, 0.9rem) !important; }
+header, nav          { font-size: clamp(0.8rem, 1vw, 0.95rem) !important; }
+
+/* --------------------------------------------------------------------------
+   5. VISUAL POLISH — Titles, eyebrows, dividers
+   -------------------------------------------------------------------------- */
+h1, h2, h3, .title {
+  letter-spacing: -0.025em !important;
+  font-weight: 800 !important;
+  line-height: 1.08 !important;
+}
+
+.title {
+  background: linear-gradient(135deg, #FFFFFF 0%, #A6C3E6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 20px rgba(166, 195, 230, 0.15));
+}
+
+.eyebrow {
+  letter-spacing: 0.25em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  color: #F89B24 !important;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, #F89B24, transparent);
+  vertical-align: middle;
+  margin-right: 12px;
+  border-radius: 2px;
+}
+
+.divider {
+  height: 3px !important;
+  width: 72px !important;
+  background: linear-gradient(90deg, #F89B24 0%, #1D429B 100%) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 20px rgba(248, 155, 36, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   6. CARDS
+   -------------------------------------------------------------------------- */
+.card, .persona-card, .pillar-item, .seg-item, .terr-card,
+.flow-item, .tl-item, .meta-item {
+  background: linear-gradient(145deg, rgba(29, 66, 155, 0.10) 0%, rgba(10, 18, 40, 0.85) 100%) !important;
+  border: 1px solid rgba(166, 195, 230, 0.12) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 20px 40px -20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before, .persona-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(166, 195, 230, 0.4), transparent);
+}
+
+.card:hover, .persona-card:hover, .pillar-item:hover,
+.seg-item:hover, .terr-card:hover, .flow-item:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(248, 155, 36, 0.35) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 28px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 40px -10px rgba(248, 155, 36, 0.25) !important;
+}
+
+/* Accent bar + colored glow */
+.accent-amber { border-left: 3px solid #F89B24 !important; box-shadow: -6px 0 32px -12px rgba(248, 155, 36, 0.4), 0 20px 40px -20px rgba(0, 0, 0, 0.5) !important; }
+.accent-red   { border-left: 3px solid #E04A55 !important; box-shadow: -6px 0 32px -12px rgba(224, 74, 85, 0.4), 0 20px 40px -20px rgba(0, 0, 0, 0.5) !important; }
+.accent-blue  { border-left: 3px solid #1D429B !important; box-shadow: -6px 0 32px -12px rgba(29, 66, 155, 0.45), 0 20px 40px -20px rgba(0, 0, 0, 0.5) !important; }
+.accent-green { border-left: 3px solid #00A651 !important; box-shadow: -6px 0 32px -12px rgba(0, 166, 81, 0.4), 0 20px 40px -20px rgba(0, 0, 0, 0.5) !important; }
+
+/* --------------------------------------------------------------------------
+   7. PILL CHIPS
+   -------------------------------------------------------------------------- */
+.pill-chip {
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  border: 1px solid transparent !important;
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.pill-chip:hover { transform: translateY(-1px); }
+
+.chip-amber { background: linear-gradient(135deg, rgba(248, 155, 36, 0.18), rgba(248, 155, 36, 0.08)) !important; color: #F89B24 !important; border-color: rgba(248, 155, 36, 0.35) !important; box-shadow: 0 4px 16px -6px rgba(248, 155, 36, 0.35) !important; }
+.chip-blue  { background: linear-gradient(135deg, rgba(166, 195, 230, 0.2), rgba(29, 66, 155, 0.15)) !important; color: #A6C3E6 !important; border-color: rgba(166, 195, 230, 0.3) !important; box-shadow: 0 4px 16px -6px rgba(29, 66, 155, 0.4) !important; }
+.chip-green { background: linear-gradient(135deg, rgba(0, 166, 81, 0.18), rgba(0, 166, 81, 0.08)) !important; color: #5AE8A0 !important; border-color: rgba(0, 166, 81, 0.35) !important; box-shadow: 0 4px 16px -6px rgba(0, 166, 81, 0.35) !important; }
+.chip-red   { background: linear-gradient(135deg, rgba(224, 74, 85, 0.18), rgba(224, 74, 85, 0.08)) !important; color: #FF8A93 !important; border-color: rgba(224, 74, 85, 0.35) !important; box-shadow: 0 4px 16px -6px rgba(224, 74, 85, 0.35) !important; }
+
+/* --------------------------------------------------------------------------
+   8. NUMBERS / STATS
+   -------------------------------------------------------------------------- */
+.num, .meta-num, .pillar-num, .flow-num {
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #F89B24 0%, #FFD89A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(248, 155, 36, 0.25));
+  letter-spacing: -0.04em !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. MISC: nav dots, timeline, scrollbar, persona icons
+   -------------------------------------------------------------------------- */
+.nav-dot { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important; }
+.nav-dot:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 12px rgba(248, 155, 36, 0.6);
+}
+
+.persona-icon {
+  font-size: 2.2rem !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
+.persona-card:hover .persona-icon { transform: scale(1.1) rotate(-4deg); }
+
+.tl-dot {
+  background: radial-gradient(circle, #F89B24, #1D429B) !important;
+  box-shadow: 0 0 16px rgba(248, 155, 36, 0.6),
+              0 0 4px rgba(255, 255, 255, 0.4) inset !important;
+}
+.tl-date { color: #F89B24 !important; font-weight: 700 !important; letter-spacing: 0.05em; }
+
+.slide-num { font-variant-numeric: tabular-nums; opacity: 0.75; letter-spacing: 0.15em; }
+
+::-webkit-scrollbar        { width: 10px; }
+::-webkit-scrollbar-track  { background: #060E1F; }
+::-webkit-scrollbar-thumb  {
+  background: linear-gradient(180deg, #1D429B, #F89B24);
+  border-radius: 10px;
+  border: 2px solid #060E1F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F89B24, #1D429B);
+}
+
+section, .slide { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+a, button { transition: all 0.2s ease !important; }
+
+/* --------------------------------------------------------------------------
+   10. TABLET (769–1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section { padding: 64px 20px 48px !important; }
+  .three-col { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* --------------------------------------------------------------------------
+   11. MOBILE (≤768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  section {
+    padding: 48px 14px 32px !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  .max-w { max-width: 100% !important; }
+
+  body .two-col,
+  body .three-col,
+  body .four-col,
+  body .five-col,
+  body .stat-grid,
+  body .flow-grid,
+  body [class*="grid-cols"] {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    gap: 12px !important;
+  }
+
+  [style*="grid-column"] { grid-column: auto !important; }
+  [style*="grid-row"]    { grid-row: auto !important; }
+
+  .persona-card, .seg-item, .terr-card, .pillar-item, .flow-item {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    line-height: 1.15 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+  h2 { font-size: 1.4rem !important; line-height: 1.2 !important; }
+  h3 { font-size: 1.05rem !important; line-height: 1.25 !important; }
+  .card h3, .persona-card h3, .seg-name, .terr-label {
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+  p, li, td, .card p, .persona-card p, .seg-body, .muted {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    word-break: normal !important;
+  }
+  .eyebrow          { font-size: 11px !important; letter-spacing: 0.15em !important; }
+  .eyebrow::before  { width: 18px !important; margin-right: 6px !important; }
+  .num              { font-size: 1.6rem !important; }
+  .meta-num, .pillar-num, .flow-num { font-size: 1.4rem !important; }
+
+  .card, .persona-card, .pillar-item, .seg-item, .terr-card, .flow-item {
+    padding: 14px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .data-table        { display: block !important; width: 100% !important; }
+  .data-table thead  { display: none !important; }
+  .data-table tbody  { display: block !important; }
+  .data-table tr {
+    display: block !important;
+    padding: 12px !important;
+    margin-bottom: 10px;
+    background: linear-gradient(145deg, rgba(29, 66, 155, 0.10), rgba(10, 18, 40, 0.85));
+    border: 1px solid rgba(166, 195, 230, 0.12);
+    border-radius: 12px;
+  }
+  .data-table td {
+    display: block !important;
+    font-size: 15px !important;
+    padding: 3px 0 !important;
+    border: none !important;
+  }
+  .data-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #F89B24;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .nav-dot   { width: 5px !important; height: 5px !important; }
+  .pill-chip { white-space: normal !important; font-size: 11px !important; padding: 4px 10px !important; }
+  a, button  { min-height: 40px; }
+}
+
+/* --------------------------------------------------------------------------
+   12. NARROW MOBILE (≤380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  section             { padding: 40px 12px 28px !important; }
+  .title              { font-size: 1.4rem !important; }
+  .card, .persona-card{ padding: 12px !important; }
+  p, li, td           { font-size: 14px !important; }
+}
